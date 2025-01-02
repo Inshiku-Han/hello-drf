@@ -1,4 +1,4 @@
-# Hello Django
+# Hello Django Rest Framework
 
 ## Setup
 
