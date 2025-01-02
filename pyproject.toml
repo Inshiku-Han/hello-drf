@@ -1,0 +1,33 @@
+[project]
+name = "hello-drf"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=5.1.4",
+    "djangorestframework>=3.15.2",
+    "djangorestframework-stubs>=3.15.2",
+    "drf-spectacular>=0.28.0",
+    "psycopg[binary]>=3.2.3",
+]
+
+[dependency-groups]
+dev = [
+    "django-stubs>=5.1.1",
+    "djangorestframework-stubs>=3.15.2",
+    "mypy>=1.14.1",
+    "pytest>=8.3.4",
+    "pytest-django>=4.9.0",
+    "ruff>=0.8.4",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+python_files = ["tests.py", "test_*.py", "*_test.py"]
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "config.settings"
